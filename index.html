@@ -21,6 +21,8 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
+      <!-- 🌙☀️ Theme Toggle Button -->
+      <button id="theme-toggle" aria-label="Toggle Theme">🌙</button>
     </div>
   </header>
 
@@ -45,15 +47,20 @@
     <section id="about" class="section" aria-labelledby="about-title">
       <div class="container" data-animate>
         <h2 id="about-title">About</h2>
-        <p>
-          I'm a beginner web developer focused on clean, accessible interfaces. 
-          I enjoy CSS layout, semantic HTML, and learning by building.
-        </p>
-        <p>
-          I'm currently exploring <strong>HTML/CSS</strong> fundamentals and crafting small projects. 
-          You can reach me via <a href="#contact">email</a> or see my code on 
-          <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>.
-        </p>
+        <!-- ✏️ Editable Text -->
+        <div id="about-text">
+          <p>
+            I'm a beginner web developer focused on clean, accessible interfaces. 
+            I enjoy CSS layout, semantic HTML, and learning by building.
+          </p>
+          <p>
+            I'm currently exploring <strong>HTML/CSS</strong> fundamentals and crafting small projects. 
+            You can reach me via <a href="#contact">email</a> or see my code on 
+            <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>.
+          </p>
+        </div>
+        <!-- Edit Button -->
+        <button id="edit-btn" class="btn btn-outline">Edit</button>
       </div>
     </section>
 
@@ -127,19 +134,7 @@
     © <span id="year">2025</span> Justine • Built with HTML & CSS
   </footer>
 
-  <!-- Simple animation script -->
-  <script>
-    const items = document.querySelectorAll("[data-animate]");
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.2 });
-
-    items.forEach(item => observer.observe(item));
-  </script>
+  <!-- Scripts -->
+  <script src="script.js"></script>
 </body>
 </html>
