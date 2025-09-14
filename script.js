@@ -32,3 +32,28 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.2 });
 
 items.forEach(item => observer.observe(item));
+
+// Theme Toggle
+const toggleBtn = document.getElementById("theme-toggle");
+const body = document.body;
+
+// Check saved theme in localStorage
+if (localStorage.getItem("theme") === "light") {
+  body.classList.add("light-theme");
+  toggleBtn.textContent = "🌙"; // Moon icon for dark mode
+} else {
+  toggleBtn.textContent = "☀️"; // Sun icon for light mode
+}
+
+toggleBtn.addEventListener("click", () => {
+  body.classList.toggle("light-theme");
+
+  if (body.classList.contains("light-theme")) {
+    localStorage.setItem("theme", "light");
+    toggleBtn.textContent = "🌙";
+  } else {
+    localStorage.setItem("theme", "dark");
+    toggleBtn.textContent = "☀️";
+  }
+});
+
