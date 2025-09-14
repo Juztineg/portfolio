@@ -306,3 +306,25 @@ address {
     grid-template-columns: 1fr;
   }
 }
+
+/* ========== Light Theme ========== */
+body.light-theme {
+  --bg: #ffffff;
+  --panel: #f8fafc;
+  --text: #0f172a;
+  --muted: #475569;
+  --brand: #0ea5e9;
+  --brand-dark: #0369a1;
+  background: #ffffff;
+  color: var(--text);
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+  margin-left: 1rem;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  color: var(--text);
+}
