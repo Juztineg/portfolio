@@ -1,50 +1,18 @@
-// 🌙☀️ Theme Toggle
-const themeToggle = document.getElementById("theme-toggle");
-themeToggle.addEventListener("click", () => {
-  document.body.classList.toggle("light-theme");
-  themeToggle.textContent = document.body.classList.contains("light-theme") ? "☀️" : "🌙";
-});
-
-// ✏️ Editable About Section
-const editBtn = document.getElementById("edit-btn");
-const aboutText = document.getElementById("about-text");
-
-editBtn.addEventListener("click", () => {
-  if (aboutText.isContentEditable) {
-    aboutText.contentEditable = "false";
-    editBtn.textContent = "Edit";
-  } else {
-    aboutText.contentEditable = "true";
-    aboutText.focus();
-    editBtn.textContent = "Save";
-  }
-});
-
-// 👀 Simple Animation (your original script moved here)
-const items = document.querySelectorAll("[data-animate]");
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.2 });
-
-items.forEach(item => observer.observe(item));
-
-// Theme Toggle
+// =========================
+// 1. Dark/Light Theme Toggle
+// =========================
 const toggleBtn = document.getElementById("theme-toggle");
 const body = document.body;
 
-// Check saved theme in localStorage
+// Load saved theme from localStorage
 if (localStorage.getItem("theme") === "light") {
   body.classList.add("light-theme");
-  toggleBtn.textContent = "🌙"; // Moon icon for dark mode
+  toggleBtn.textContent = "🌙"; // Moon = switch back to dark
 } else {
-  toggleBtn.textContent = "☀️"; // Sun icon for light mode
+  toggleBtn.textContent = "☀️"; // Sun = switch to light
 }
 
+// Toggle theme on click
 toggleBtn.addEventListener("click", () => {
   body.classList.toggle("light-theme");
 
@@ -57,3 +25,24 @@ toggleBtn.addEventListener("click", () => {
   }
 });
 
+// =========================
+// 2. Editable Section
+// =========================
+// Target your "About Me" (change #about-text to match your HTML element ID)
+const editBtn = document.getElementById("edit-btn");
+const aboutText = document.getElementById("about-text");
+
+if (editBtn && aboutText) {
+  editBtn.addEventListener("click", () => {
+    if (aboutText.isContentEditable) {
+      // Save and disable editing
+      aboutText.contentEditable = "false";
+      editBtn.textContent = "Edit";
+    } else {
+      // Enable editing
+      aboutText.contentEditable = "true";
+      aboutText.focus();
+      editBtn.textContent = "Save";
+    }
+  });
+}
