@@ -306,8 +306,6 @@ address {
     grid-template-columns: 1fr;
   }
 }
-
-/* ========== Light Theme ========== */
 body.light-theme {
   --bg: #ffffff;
   --panel: #f8fafc;
@@ -319,7 +317,6 @@ body.light-theme {
   color: var(--text);
 }
 
-/* Theme Toggle Button */
 #theme-toggle {
   margin-left: 1rem;
   cursor: pointer;
@@ -328,3 +325,13 @@ body.light-theme {
   font-size: 1.2rem;
   color: var(--text);
 }
+body.light-theme #skills {
+  background-color: #ffffff; 
+  color: #0f172a; 
+}
+body.light-theme #skills li {
+  background-color: #ffffff;
+  color: #0f172a; 
+  border: 1px solid #0f172a;
+}
+
