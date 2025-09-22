@@ -1,140 +1,144 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Justine - Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <a class="skip-link" href="#content">Skip to content</a>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Header -->
-  <header class="site-header">
-    <div class="container">
-      <h1 class="logo">Justine</h1>
-      <nav aria-label="Primary">
-        <ul class="nav">
+    <header class="site-header" role="banner">
+      <nav class="nav" aria-label="Primary">
+        <button class="nav__menu-btn" aria-expanded="false" aria-controls="nav-links" id="menuBtn" title="Toggle menu">
+          ☰
+        </button>
+        <ul class="nav__links" id="nav-links">
+          <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
+
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+          🌙
+        </button>
       </nav>
-      <!-- 🌙☀️ Theme Toggle Button -->
-      <button id="theme-toggle" aria-label="Toggle Theme">🌙</button>
-    </div>
-  </header>
+    </header>
 
-  <main id="content">
-    <!-- Hero Section -->
-    <section class="hero" aria-labelledby="intro-title">
-      <div class="container">
-        <div class="hero-grid">
-          <div data-animate>
-            <h2 id="intro-title">Hi, I'm Justine</h2>
-            <p class="lead">I build simple, human-friendly web experiences.</p>
+    <main id="main">
+      <!-- Hero -->
+      <section id="home" class="section hero">
+        <div class="container hero__grid">
+          <div class="hero__media" aria-hidden="true">
+            <img class="hero__img" src="images/profile.jpg" alt="Your Name portrait" />
           </div>
-          <figure class="profile" data-animate>
-            <img src="images/justine.jpg" alt="Portrait of Justine" />
-            <figcaption>Based in Butuan City, PH</figcaption>
-          </figure>
+          <div class="hero__content">
+            <h1>Hi, I’m <span class="accent" id="userName">Justine</span></h1>
+            <p class="subtitle">I’m a web developer</p>
+            <a class="btn" href="#projects">View my work</a>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- About Section -->
-    <section id="about" class="section" aria-labelledby="about-title">
-      <div class="container" data-animate>
-        <h2 id="about-title">About</h2>
-        <!-- ✏️ Editable Text -->
-        <div id="about-text">
+      <!-- About -->
+      <section id="about" class="section section--band">
+        <div class="container">
+          <h2>About Me</h2>
+          <div class="rule"></div>
+          <div class="about__controls">
+            <button class="btn btn--soft" id="aboutEditBtn">Edit</button>
+            <div class="about__save-cancel" id="aboutActions" hidden>
+              <button class="btn btn--primary" id="aboutSaveBtn">Save</button>
+              <button class="btn btn--soft" id="aboutCancelBtn">Cancel</button>
+            </div>
+          </div>
+          <div id="aboutContent" class="about__content" aria-live="polite">
+            <p>
+              I’m a passionate developer who enjoys building delightful, accessible web
+              experiences. I specialize in modern JavaScript, CSS, and clean UI design.
+            </p>
+            <p>
+              When I’m not coding, you can find me sketching interfaces, learning new
+              frameworks, or exploring design systems.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects" class="section">
+        <div class="container">
+          <h2>Projects</h2>
+          <div class="projects">
+            <article class="project">
+              <div class="project__media"><img class="project__img" src="images/project1.png" alt="Screenshot of Project One" data-lightbox="project" /></div>
+              <div class="project__body">
+                <h3>Project One</h3>
+                <p>
+                  This is my first system for inventory management system.
+                </p>
+              </div>
+            </article>
+            <article class="project">
+              <div class="project__media">
+                <img class="project__img" src="images/project2.png" alt="Screenshot of Project Two" data-lightbox="project" />
+              </div>
+              <div class="project__body">
+                <h3>Project Two</h3>
+                <p>
+                  My Portfolio.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills" class="section section--band">
+        <div class="container">
+          <h2>Skills</h2>
+          <ul class="skills">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>Node.js</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="section">
+        <div class="container">
+          <h2>Contact</h2>
           <p>
-            I'm a beginner web developer focused on clean, accessible interfaces. 
-            I enjoy CSS layout, semantic HTML, and learning by building.
-          </p>
-          <p>
-            I'm currently exploring <strong>HTML/CSS</strong> fundamentals and crafting small projects. 
-            You can reach me via <a href="#contact">email</a> or see my code on 
-            <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>.
+            Email: <a href="mailto:you@example.com">justine.gabaldon@carsu.edu.ph</a>
           </p>
         </div>
-        <!-- Edit Button -->
-        <button id="edit-btn" class="btn btn-outline">Edit</button>
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section" aria-labelledby="projects-title">
+    <footer class="site-footer">
       <div class="container">
-        <h2 id="projects-title" data-animate>Projects</h2>
-        <div class="cards">
-
-          <article class="card" data-animate>
-            <img src="images/Screenshot_11.png" alt="Screenshot of Project A" />
-            <div class="card-body">
-              <h3>Project A</h3>
-              <p>A simple landing page using only HTML and CSS.</p>
-              <a class="btn btn-outline" href="#" target="_blank" rel="noopener">View</a>
-            </div>
-          </article>
-
-          <article class="card" data-animate>
-            <img src="images/Screenshot_2.png" alt="Screenshot of Project B" />
-            <div class="card-body">
-              <h3>Project B</h3>
-              <p>A responsive portfolio layout with flexbox.</p>
-              <a class="btn btn-outline" href="#" target="_blank" rel="noopener">View</a>
-            </div>
-          </article>
-
-          <article class="card" data-animate>
-            <img src="images/Screenshot_3.png" alt="Screenshot of Project C" />
-            <div class="card-body">
-              <h3>Project C</h3>
-              <p>A clean contact page with form styles.</p>
-              <a class="btn btn-outline" href="#" target="_blank" rel="noopener">View</a>
-            </div>
-          </article>
-
-        </div>
+        <small>© <span id="year"></span> <span id="footerName">Justine</span>. All rights reserved.</small>
       </div>
-    </section>
+    </footer>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section" aria-labelledby="skills-title">
-      <div class="container" data-animate>
-        <h2 id="skills-title">Skills</h2>
-        <ul class="chips" role="list">
-          <li>HTML5</li>
-          <li>CSS3</li>
-          <li>Responsive Design</li>
-          <li>Git & GitHub</li>
-          <li>Accessibility</li>
-        </ul>
-      </div>
-    </section>
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
+      <button class="lightbox__close" id="lightboxClose" aria-label="Close preview">✕</button>
+      <img class="lightbox__img" id="lightboxImg" alt="Expanded project image" />
+    </div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section" aria-labelledby="contact-title">
-      <div class="container" data-animate>
-        <h2 id="contact-title">Contact</h2>
-        <address>
-          Email: <a href="mailto:justine.gabaldon@carsu.edu.ph">justine.gabaldon@carsu.edu.ph</a><br />
-          Location: Butuan City, Philippines
-        </address>
-        <br />
-        <a href="mailto:justine.gabaldon@carsu.edu.ph" class="btn">Email Me</a>
-      </div>
-    </section>
-  </main>
+    <script src="script.js" defer></script>
+  </body>
+  </html>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    © <span id="year">2025</span> Justine • Built with HTML & CSS
-  </footer>
 
-  <!-- Scripts -->
-  <script src="script.js"></script>
-</body>
-</html>
